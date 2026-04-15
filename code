@@ -1,0 +1,17 @@
+!pip install textblob
+!python -m textblob.download_corpora
+  from textblob import TextBlob
+
+print("=== Simple Auto-Correct System ===")
+
+while True:
+    text = input("\nEnter a sentence (or type 'exit' to quit): ")
+
+    if text.lower() == "exit":
+        print("Exiting program...")
+        break
+
+    blob = TextBlob(text)
+    corrected = blob.correct()
+
+    print("Corrected Sentence:", corrected)
